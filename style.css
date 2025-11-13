@@ -10,6 +10,7 @@ h1 {
 	font-size: 21vw;
 	display: flex;
 	justify-content: center;
+	margin-block-start: 1vh;
 	margin-block-end: 20vh;
 }
 
