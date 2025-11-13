@@ -10,7 +10,7 @@ h1 {
 	font-size: 21vw;
 	display: flex;
 	justify-content: center;
-	margin-block-end: 10vh;
+	margin-block-end: 20vh;
 }
 
 ol {
@@ -19,6 +19,7 @@ ol {
 	font-size: 7vw;
 	display: flex;
 	flex-direction: column;
+	height: 80vh;
 	gap: 3vh;
 	align-items: center;
 }
