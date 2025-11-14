@@ -1,0 +1,130 @@
+/* base style */
+:root {
+	font-size: 120%;
+	font-family: Futura, sans-serif;
+	font-weight: 100;
+
+	--red: #cc2c13;
+	--white: #dddae4;
+	--blue: #265CC3;
+	--dark-blue: #113276;
+	--green: #49762d;
+	--purple: #a51759;
+
+	background-color: var(--red);
+}
+
+/* pseudo element before h1 (used as decoration) */
+h1::before {
+	content: "";
+	position: absolute;
+	height: 20vh;
+	width: 100%;
+	display: flex;
+	
+	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient */
+	background: linear-gradient(
+		to right,
+		var(--red) 0% 33%,
+		var(--blue) 33% 100%
+	);
+}
+
+/* h1 style */
+h1 {
+	height: 70vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(24, 1fr);
+	font-size: 230%;
+	font-weight: 600;
+	letter-spacing: -0.05rem;
+	background-color: var(--red);
+	color: var(--white);
+}
+
+/* making grid columns same width, from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width */
+h1 > * {
+	min-width: 0;
+}
+
+/* placing h1 text in grid */
+h1 > :nth-child(1) {
+	grid-column: 2;
+	grid-row: 15;
+}
+
+h1 > :nth-child(2) {
+	grid-column: 6;
+	grid-row: 17;
+}
+
+h1 > :nth-child(3) {
+	grid-column: 8;
+	grid-row: 19;
+}
+
+/* adding author text */
+header > span {
+	height: 13vh;
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(24, 1fr);
+	align-items: center;
+	min-width: 0;
+	background-color: var(--purple);
+}
+
+header p {
+	grid-column: 4;
+	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space */
+	white-space: nowrap;
+	overflow: visible;
+	color: var(--white);
+}
+
+header::after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 9vh;
+	width: 100%;
+	background: linear-gradient(
+		to right,
+		var(--dark-blue) 0% 25%,
+		var(--green) 25% 50%,
+		var(--blue) 50% 75%,
+		var(--purple) 50% 75%
+	);
+}
+
+/* adding space after landing page */
+article {
+	padding-block-start: 4rem;
+}
+
+/* body text style */
+main {
+	background-color: var(--dark-blue);
+	color: var(--white);
+	padding: 1.5rem;
+}
+
+/* h2 style */
+h2 {
+	font-weight: 700;
+	font-size: 150%;
+	padding-block-end: 1.75rem;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 120%;
+	padding-block-end: 1.5rem;
+}
+
+main p {
+	line-height: 1.5;
+	margin-block-end: 1rem;
+}
