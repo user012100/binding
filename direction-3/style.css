@@ -38,7 +38,7 @@ h1 {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(24, 1fr);
-	font-size: 230%;
+	font-size: 240%;
 	font-weight: 600;
 	letter-spacing: -0.05rem;
 	background-color: var(--red);
