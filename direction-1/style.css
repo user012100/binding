@@ -106,10 +106,9 @@ article {
 
 /* body text style */
 main {
-	background-color: var(--dark-blue);
+	display: block;
 	color: var(--white);
-	padding-inline-start: 1.5rem;
-	padding-inline-end: 1.25rem;
+	background-color: var(--dark-blue);
 }
 
 /* h2 style */
@@ -117,12 +116,14 @@ h2 {
 	font-weight: 700;
 	font-size: 150%;
 	padding-block-end: 1.75rem;
+	padding-inline-start: 1.5rem;
 }
 
 h3 {
 	font-weight: 700;
 	font-size: 120%;
 	padding-block-end: 1.5rem;
+	padding-inline-start: 1.5rem;
 }
 
 main p {
@@ -130,4 +131,25 @@ main p {
 	margin-block-end: 1.4rem;
 	text-wrap: balance;
 	hyphens: auto;
+	padding-inline-start: 1.5rem;
+	padding-inline-end: 1.25rem;
+}
+
+.block {
+	color: var(--red);
+	background-color: var(--green);
+	padding-inline-start: 0;
+	width: 100%;
+}
+
+.block::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2rem;
+	background: linear-gradient(
+
+	);
+	padding-inline-start: 0;
+	width: 100%;
 }
