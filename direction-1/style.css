@@ -126,7 +126,7 @@ h3 {
 }
 
 article p {
-	text-wrap: balance;
+	text-wrap: pretty;
 	hyphens: auto;
 }
 
@@ -143,13 +143,14 @@ section {
 }
 
 section > p {
-	padding-inline-start: 1rem;
+	padding-inline-start: 1.5rem;
+	padding-inline-end: 1rem;
 	width: 100%;
 	font-size: 140%;
 	letter-spacing: -0.03rem;
 	line-height: 1.25;
-	margin-block-start: 2rem;
-	margin-block-end: 2rem;
+	margin-block-start: 1.75rem;
+	margin-block-end: 1.75rem;
 	font-style: italic;
 }
 
@@ -172,4 +173,19 @@ section::after {
 	height: 1.75rem;
 	background-color: var(--dark-blue);
 	margin-block-end: 2rem;
+}
+
+div {
+	height: 2.2rem;
+	width: 100%;
+	background-color: var(--red);
+	margin-block-start: 2rem;
+	margin-block-end: 2rem;
+	background: linear-gradient(
+		to right,
+		var(--red) 0% 25%,
+		var(--green) 25% 50%,
+		var(--blue) 50% 75%,
+		var(--purple) 75% 100%
+	)
 }
