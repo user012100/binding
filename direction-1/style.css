@@ -1,115 +1,61 @@
 /* base style */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
 :root {
 	font-size: 120%;
-	font-family: Futura, sans-serif;
-	font-weight: 100;
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 400;
 
-	--red: #cc2c13;
-	--white: #dddae4;
+	--red: #e83a34;
+	--white: #d2cece;
 	--blue: #265CC3;
-	--dark-blue: #113276;
-	--green: #3c701c;
-	--purple: #a51759;
-	--yellow: #ffd22f;
+	--dark-blue: #061a40;
+	--green: #4c7c2e;
+	--purple: #9e3767;
+	--yellow: #dfb323;
+	--black: #101010;
 
 	background-color: var(--blue);
 }
 
-/* pseudo element before h1 (used as decoration) */
-h1::before {
-	content: "";
-	position: absolute;
-	height: 20vh;
-	width: 100%;
-	display: flex;
-	
-	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient */
-	background: linear-gradient(
-		to right,
-		var(--red) 0% 33%,
-		var(--blue) 33% 100%
-	);
-}
-
 /* h1 style */
 h1 {
-	height: 70vh;
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(24, 1fr);
-	font-size: 230%;
-	font-weight: 600;
-	letter-spacing: -0.05rem;
-	background-color: var(--red);
+	font-weight: 700;
 	color: var(--white);
+	font-size: 250%;
+	display: flex;
+	flex-direction: column;
 }
 
-/* making grid columns same width, from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width */
-h1 > * {
-	min-width: 0;
+header {
+	background-color: var(--blue);
+	color: var(--red);
+	font-weight: 500;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-inline-start: 2rem;
+	line-height: 1.5;
+
+	p {
+		margin-block-start: 1rem;
+		color: var(--white);
+	}
 }
 
-/* placing h1 text in grid */
-h1 > :nth-child(1) {
-	grid-column: 2;
-	grid-row: 15;
-}
-
-h1 > :nth-child(2) {
-	grid-column: 6;
-	grid-row: 17;
-}
-
-h1 > :nth-child(3) {
-	grid-column: 8;
-	grid-row: 19;
-}
-
-/* adding author text */
-header > span {
-	height: 13vh;
-	display: grid;
-	position: relative;
-	grid-template-columns: repeat(24, 1fr);
-	align-items: center;
-	min-width: 0;
-	background-color: var(--purple);
-}
-
-header p {
-	grid-column: 4;
-	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space */
-	white-space: nowrap;
-	overflow: visible;
-	color: var(--white);
-}
-
-header::after {
-	content: "";
-	display: block;
-	position: absolute;
-	height: 9vh;
-	width: 100%;
-	background: linear-gradient(
-		to right,
-		var(--dark-blue) 0% 25%,
-		var(--green) 25% 50%,
-		var(--blue) 50% 75%,
-		var(--purple) 50% 75%
-	);
-}
 
 /* adding space after landing page */
 article {
-	padding-block-start: 5.5rem;
+	padding-block-start: 2rem;
 	padding-block-end: 3rem;
 }
 
 /* body text style */
 main {
 	color: var(--white);
-	background-color: var(--dark-blue);
+	background-color: var(--blue);
 }
 
 /* h2 style */
@@ -118,13 +64,15 @@ h2 {
 	font-size: 150%;
 	padding-block-end: 1.75rem;
 	padding-inline-start: 1.5rem;
+	color: var(--dark-blue);
 }
 
 h3 {
 	font-weight: 700;
 	font-size: 120%;
-	padding-block-end: 1.5rem;
+	padding-block-end: 2rem;
 	padding-inline-start: 1.5rem;
+	color: var(--dark-blue);
 }
 
 article p {
@@ -140,8 +88,11 @@ article > p {
 }
 
 section {
-	background-color: var(--red);
+	background-color: var(--dark-blue);
 	width: 100%;
+	color: var(--white);
+	padding-block: 1rem;
+	margin-block: 2.5rem;
 }
 
 section > p, ul {
@@ -155,29 +106,9 @@ section > p, ul {
 	font-style: italic;
 }
 
-section::before {
-	content: "";
-	display: block;
-	position: relative;
-	width: 90%;
-	height: 1.75rem;
-	background-color: var(--dark-blue);
-	margin-block-start: 2rem;
-}
-
-section::after {
-	content: "";
-	display: block;
-	position: relative;
-	margin-inline-start: 10%;
-	width: 90%;
-	height: 1.75rem;
-	background-color: var(--dark-blue);
-	margin-block-end: 2rem;
-}
-
 ul {
-	background-color: var(--purple);
+	background-color: var(--dark-blue);
+	color: var(--white);
 	width: 100%;
 	padding-block: 1.5rem;
 }
@@ -188,21 +119,39 @@ li {
 }
 
 div {
-	height: 2.2rem;
-	width: 100%;
-	background-color: var(--red);
+	display: flex;
+	gap: 0;
+	justify-content: space-between;
+	padding-inline: 1rem;
 	margin-block: 2rem;
+	width: 100%;
+	height: 10vw; 
 	background: linear-gradient(
 		to right,
-		var(--red) 0% 25%,
-		var(--green) 25% 50%,
-		var(--blue) 50% 75%,
-		var(--purple) 75% 100%
-	)
+		var(--dark-blue) 0%,
+		var(--dark-blue) 11.111%,
+		var(--white)     11.111%,
+		var(--white)     22.222%,
+		var(--dark-blue) 22.222%,
+		var(--dark-blue) 33.333%,
+		var(--white)     33.333%,
+		var(--white)     44.444%,
+		var(--dark-blue) 44.444%,
+		var(--dark-blue) 55.555%,
+		var(--white)     55.555%,
+		var(--white)     66.666%,
+		var(--dark-blue) 66.666%,
+		var(--dark-blue) 77.777%,
+		var(--white)     77.777%,
+		var(--white)     88.888%,
+		var(--dark-blue) 88.888%,
+		var(--dark-blue) 100%
+	);
 }
 
 .numbers {
-	background-color: var(--red);
+	background-color: var(--white);
+	color: var(--dark-blue);
 	padding-inline: 0.2em;
 }
 
@@ -218,7 +167,8 @@ a {
 	padding-inline: 1.5rem;
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
-	color: var(--yellow);
+	color: var(--dark-blue);
+	font-weight: 500;
 }
 
 a:hover {
