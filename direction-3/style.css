@@ -1,0 +1,227 @@
+/* base style */
+:root {
+	font-size: 120%;
+	font-family: Futura, sans-serif;
+	font-weight: 100;
+
+	--red: #cc2c13;
+	--white: #dddae4;
+	--blue: #265CC3;
+	--dark-blue: #113276;
+	--green: #3c701c;
+	--purple: #a51759;
+	--yellow: #ffd22f;
+
+	background-color: var(--blue);
+}
+
+/* pseudo element before h1 (used as decoration) */
+h1::before {
+	content: "";
+	position: absolute;
+	height: 20vh;
+	width: 100%;
+	display: flex;
+	
+	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient */
+	background: linear-gradient(
+		to right,
+		var(--red) 0% 33%,
+		var(--blue) 33% 100%
+	);
+}
+
+/* h1 style */
+h1 {
+	height: 70vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(24, 1fr);
+	font-size: 230%;
+	font-weight: 600;
+	letter-spacing: -0.05rem;
+	background-color: var(--red);
+	color: var(--white);
+}
+
+/* making grid columns same width, from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width */
+h1 > * {
+	min-width: 0;
+}
+
+/* placing h1 text in grid */
+h1 > :nth-child(1) {
+	grid-column: 2;
+	grid-row: 15;
+}
+
+h1 > :nth-child(2) {
+	grid-column: 6;
+	grid-row: 17;
+}
+
+h1 > :nth-child(3) {
+	grid-column: 8;
+	grid-row: 19;
+}
+
+/* adding author text */
+header > span {
+	height: 13vh;
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(24, 1fr);
+	align-items: center;
+	min-width: 0;
+	background-color: var(--purple);
+}
+
+header p {
+	grid-column: 4;
+	/* from MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space */
+	white-space: nowrap;
+	overflow: visible;
+	color: var(--white);
+}
+
+header::after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 9vh;
+	width: 100%;
+	background: linear-gradient(
+		to right,
+		var(--dark-blue) 0% 25%,
+		var(--green) 25% 50%,
+		var(--blue) 50% 75%,
+		var(--purple) 50% 75%
+	);
+}
+
+/* adding space after landing page */
+article {
+	padding-block-start: 5.5rem;
+	padding-block-end: 3rem;
+}
+
+/* body text style */
+main {
+	color: var(--white);
+	background-color: var(--dark-blue);
+}
+
+/* h2 style */
+h2 {
+	font-weight: 700;
+	font-size: 150%;
+	padding-block-end: 1.75rem;
+	padding-inline-start: 1.5rem;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 120%;
+	padding-block-end: 1.5rem;
+	padding-inline-start: 1.5rem;
+}
+
+article p {
+	text-wrap: pretty;
+	hyphens: auto;
+}
+
+article > p {
+	line-height: 1.5;
+	padding-inline-start: 1.5rem;
+	padding-inline-end: 1.25rem;
+	margin-block-end: 1.5rem;
+}
+
+section {
+	background-color: var(--red);
+	width: 100%;
+}
+
+section > p, ul {
+	padding-inline-start: 1.5rem;
+	padding-inline-end: 1rem;
+	width: 100%;
+	font-size: 140%;
+	letter-spacing: -0.03rem;
+	line-height: 1.3;
+	margin-block: 1.75rem;
+	font-style: italic;
+}
+
+section::before {
+	content: "";
+	display: block;
+	position: relative;
+	width: 90%;
+	height: 1.75rem;
+	background-color: var(--dark-blue);
+	margin-block-start: 2rem;
+}
+
+section::after {
+	content: "";
+	display: block;
+	position: relative;
+	margin-inline-start: 10%;
+	width: 90%;
+	height: 1.75rem;
+	background-color: var(--dark-blue);
+	margin-block-end: 2rem;
+}
+
+ul {
+	background-color: var(--purple);
+	width: 100%;
+	padding-block: 1.5rem;
+}
+
+li {
+	margin-block-end: 0.75lh;
+	font-size: 88%;
+}
+
+div {
+	height: 2.2rem;
+	width: 100%;
+	background-color: var(--red);
+	margin-block: 2rem;
+	background: linear-gradient(
+		to right,
+		var(--red) 0% 25%,
+		var(--green) 25% 50%,
+		var(--blue) 50% 75%,
+		var(--purple) 75% 100%
+	)
+}
+
+.numbers {
+	background-color: var(--red);
+	padding-inline: 0.2em;
+}
+
+nav {
+	margin-block: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a {
+	padding-block: 0.5rem;
+	padding-inline: 1.5rem;
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	color: var(--yellow);
+}
+
+a:hover {
+	color: var(--red);
+}
+
