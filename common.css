@@ -12,7 +12,7 @@
 	--purple: #a51759;
 	--yellow: #f5c61b;
 
-	background-color: var(--blue);
+	background-color: var(--dark-blue);
 }
 
 /* pseudo element before h1 (used as decoration) */
