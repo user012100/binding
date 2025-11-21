@@ -135,7 +135,7 @@ article p {
 article > p {
 	line-height: 1.5;
 	padding-inline-start: 1.5rem;
-	padding-inline-end: 1.25rem;
+	padding-inline-end: 0.5rem;
 	margin-block-end: 1.5rem;
 }
 
