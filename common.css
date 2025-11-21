@@ -135,7 +135,7 @@ article p {
 article > p {
 	line-height: 1.5;
 	padding-inline-start: 1.5rem;
-	padding-inline-end: 0.5rem;
+	padding-inline-end: 0.75rem;
 	margin-block-end: 1.5rem;
 }
 
@@ -207,8 +207,9 @@ div {
 }
 
 nav {
-	margin-block: 1.5rem;
+	height: 3rem;
 	display: flex;
+	background-color: var(--dark-blue);
 	justify-content: space-between;
 	align-items: center;
 }

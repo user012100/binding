@@ -1,0 +1,12 @@
+/* base style */
+:root {
+	--red: #e93e20;
+	--white: #dddae4;
+	--blue: #53ABDA;
+	--dark-blue: #275386;
+	--green: #6FA859;
+	--purple: #9e4576;
+	--yellow: #F7D147;
+
+	background-color: var(--blue);
+}
