@@ -1,23 +1,29 @@
-/* base style */
-:root {
-	font-size: 120%;
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 400;
+/* ~~ base styles ~~ */
+/* importing font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-	--white: #CFD1D3;
-	--black: ;
-	--red: #EA3423;
+:root {
+	/* css custom properties */
+	--white: #d1cfd4;
+	--black: #2c0000;
+	--red: #df1e0d;
 	--yellow: ;
 	--pink: ;
 	--blue: ;
 
+	/* base fonts */
+	font-size: 120%;
+	font-family: "Geist";
+	font-weight: 400;
+
 	background-color: var(--red);
 }
 
-/* grid layout */
+/* ~~ grid layout ~~ */
 body {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 100vw;
+	/* only on mobile */
 	grid-template-areas:
 		"figure"
 		"header"
@@ -25,35 +31,86 @@ body {
 		"main";
 }
 
+/* ~~ cover image ~~ */
+/* container */
 figure {
 	aspect-ratio: 1 / 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	/* should only be on mobile */
+	margin-block-start: 1rem;
+	margin-block-end: 3rem;
 }
 
+/* albers square */
+.cover {
+	max-width: 75%;
+	max-height: 75%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5vh;
+}
+
+figcaption {
+	color: var(--black);
+	font-style: italic;
+	font-weight: 200;
+	font-size: clamp(0.75rem, 2.75vw, 0.85rem);
+	line-height: 0.7lh;
+}
+
+/* title */
 h1 {
+	color: var(--white);
 	font-weight: 700;
 	text-transform: uppercase;
 	text-align: center;
-	font-size: clamp(1.55rem, 7.55vw, 10rem);
+	font-size: clamp(1.25rem, 7.8vw, 3rem);
 	padding-block: 0.75rem;
 
 	span {
 		display: inline;
 	}
+
+
 }
 
+/* ~~ navigation ~~ */
 nav a {
-	display: flex;
-	font-size: clamp(1.25rem, 6vw, 2.5rem);
-	background-color: var(--white);
+	display: grid;
+	grid-template-columns: 2rem auto;
+	gap: 1.75rem;
 	padding-block: 1rem;
 
-	p.description {
-		display: none;
-	}
+	font-size: clamp(1rem, 6vw, 2rem);
+
+	background-color: var(--white);
+	color: var(--red);
 }
 
-li {
-	border-bottom: 0.08em solid var(--red);
+/* invert color on hover */
+nav a:hover {
+	background-color: var(--red);
+	color: var(--white);
+}
+
+/* buttons style */
+ol li {
+	border-bottom: 0.1em solid var(--red);
+}
+
+/* index roman numerals */
+p.index {
+	justify-self: center;
+	padding-inline-start: 1rem;
+}
+
+/* description */
+p.description {
+	display: none;
 }
 
 svg {

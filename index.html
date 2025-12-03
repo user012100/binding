@@ -4,16 +4,21 @@
 		<meta charset="UTF-8">
 		<title>Project 3: Binding</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- using CSS layers -->
 		<style>
 			@import 'reset.css' layer(reset);
 			@import 'common.css' layer(common);
 		</style>
 	</head>
 	<body>
+		<!-- section 1, cover -->
 		<figure>
-			<img src="assets/albers-square.jpg" alt="change alt text">
-			<figcaption>change caption</figcaption>
+			<div class="cover">
+				<img src="assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				<figcaption>Josef Albers, Homage to the Square.</figcaption>
+			</div>
 		</figure>
+		<!-- section 2, title -->
 		<header>
 			<h1>
 				<span>Persistance</span>
@@ -21,12 +26,13 @@
 				<span>Color</span>
 			</h1>
 		</header>
+		<!-- section 3, navigation -->
 		<nav>
 			<ol>
 				<li>
-					<a>
+					<a href="#introduction">
 						<p class="index">I</p>
-						<h2>Introduction</h2>
+						<p class="title">Introduction</p>
 						<p class="description">change this</p>
 						<svg></svg>
 					</a>
@@ -34,7 +40,7 @@
 				<li>
 					<a href="interaction-of-color">
 						<p class="index">II</p>
-						<h2>Interaction</h2>
+						<p class="title">Interaction</p>
 						<p class="description">change this</p>
 						<svg></svg>
 					</a>
@@ -42,7 +48,8 @@
 				<li>
 					<a href="homage-to-an-homage-of-an-homage">
 						<p class="index">III</p>
-						<h2>Homage</h2>
+						<!-- maybe use breakpoints here for longer titles? idk -->
+						<p class="title">Homage</p>
 						<p class="description">change this</p>
 						<svg></svg>
 					</a>
@@ -50,13 +57,14 @@
 				<li>
 					<a href="everyday-color-theory">
 						<p class="index">IV</p>
-						<h2>Theory</h2>
+						<p class="title">Theory</p>
 						<p class="description">change this</p>
 						<svg></svg>
 					</a>
 				</li>
 			</ol>
 		</nav>
+		<!-- section 4, main content -->
 		<main>
 			<article>
 
