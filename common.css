@@ -4,15 +4,17 @@
 
 :root {
 	/* css custom properties */
-	--white: #d1cfd4;
-	--black: #2c0000;
-	--red: #df1e0d;
+	--white: #e1dee4;
+	--gray: #2c0000;
+	--black: #181717;
+	--red: #c01809;
 	--yellow: ;
 	--pink: ;
 	--blue: ;
+	--stroke-width: 0.1rem;
 
-	/* base fonts */
-	font-size: 120%;
+	/* base font */
+	font-size: 115%;
 	font-family: "Geist";
 	font-weight: 400;
 
@@ -31,8 +33,7 @@ body {
 		"main";
 }
 
-/* ~~ cover image ~~ */
-/* container */
+/* ~~ cover ~~ */
 figure {
 	aspect-ratio: 1 / 1;
 	display: flex;
@@ -41,11 +42,11 @@ figure {
 	justify-content: center;
 
 	/* should only be on mobile */
-	margin-block-start: 1rem;
-	margin-block-end: 3rem;
+	margin-block-start: 2.25rem;
+	margin-block-end: 3.75rem;
 }
 
-/* albers square */
+/* image + caption container */
 .cover {
 	max-width: 75%;
 	max-height: 75%;
@@ -55,7 +56,7 @@ figure {
 }
 
 figcaption {
-	color: var(--black);
+	color: var(--gray);
 	font-style: italic;
 	font-weight: 200;
 	font-size: clamp(0.75rem, 2.75vw, 0.85rem);
@@ -71,19 +72,23 @@ h1 {
 	font-size: clamp(1.25rem, 7.8vw, 3rem);
 	padding-block: 0.75rem;
 
+	/* only on mobile */
 	span {
 		display: inline;
 	}
-
-
 }
 
 /* ~~ navigation ~~ */
 nav a {
 	display: grid;
 	grid-template-columns: 2rem auto;
-	gap: 1.75rem;
+	column-gap: 1.75rem;
 	padding-block: 1rem;
+	padding-inline-end: 1rem;
+
+	/* only on mobile */
+	grid-template-areas:
+		"index title";
 
 	font-size: clamp(1rem, 6vw, 2rem);
 
@@ -99,20 +104,50 @@ nav a:hover {
 
 /* buttons style */
 ol li {
-	border-bottom: 0.1em solid var(--red);
+	border-bottom: var(--stroke-width) solid var(--red);
 }
 
 /* index roman numerals */
 p.index {
+	grid-area: index;
+
 	justify-self: center;
-	padding-inline-start: 1rem;
+	padding-inline-start: 1.5rem;
+	font-weight: 500;
 }
 
-/* description */
-p.description {
-	display: none;
+p.title {
+	grid-area: title;
+	font-weight: 500;
 }
 
-svg {
-	display: none;
+main {
+
+	article {
+		background-color: var(--white);
+		color: var(--red);
+		padding: 1.25rem;
+		padding-block-start: 2rem;
+	}
+
+	footer {
+		background-color: var(--white);
+		color: var(--red);
+	}
+
+	p {
+		line-height: 0.95lh;
+		padding-block-end: 1rem;
+	}
+
+	a {
+		color: var(--black);
+		text-decoration: underline;
+		font-style: italic;
+	}
+
+	em {
+		font-style: italic;
+		text-decoration: underline;
+	}
 }
