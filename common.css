@@ -82,7 +82,8 @@ body {
 
 		h1 {
 			margin-block: 0.09rem;
-			line-height: 4.7rem;
+			line-height: 4.67rem;
+			hyphens: auto;
 		}
 
 		h1 span {
@@ -130,7 +131,7 @@ h1 {
 	color: var(--white);
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: clamp(1.25rem, 7.8vw, 4.25rem);
+	font-size: clamp(1.25rem, 7.8vw, 4.3rem);
 	padding-block: 0.75rem;
 	text-align: center;
 
@@ -235,7 +236,7 @@ main {
 
 	/* paragraphs and list item padding */
 	p, li {
-		line-height: 0.99lh;
+		line-height: 1.05lh;
 		padding-block-end: 1.5rem;
 	}
 
@@ -254,11 +255,6 @@ main {
 
 	#colophon a:hover {
 		color: var(--black);
-	}
-
-	/* footer text color */
-	footer {
-		color: var(--white);
 	}
 
 	/* emphasized text */
