@@ -21,36 +21,38 @@
 	background-color: var(--red);
 }
 
-/* ~~ general layout ~~ */
+/* ~~ general layout and small tweaks for breakpoints ~~ */
 body {
 	display: grid;
 	grid-template-columns: 100vw;
 
-	/* mobile layout */
+	/* mobile layout only */
 	@media (width < 667px) {
 		grid-template-areas:
 		"figure"
 		"header"
 		"navigation"
 		"main";
-
-		figure {
-			margin-block-start: 2.25rem;
-			margin-block-end: 3.75rem;
-		}
 	}
 
-	/* tablet layout */
+	/* tablet layout only */
 	@media (width > 639px) {
 		grid-template-areas:
 		"header"
 		"figure"
 		"navigation"
 		"main";
+	}
 
+	/* mobile + tablet layout */
+	@media (width <= 1024px) {
 		figure {
 			margin-block-start: 2.25rem;
 			margin-block-end: 3.75rem;
+		}
+
+		article {
+			padding: 1.25rem;
 		}
 	}
 
@@ -61,12 +63,16 @@ body {
 		figure, header {
 			position: fixed;
 			left: 0;
-			min-width: 32vw;
-			width: 32vw;
+			min-width: 39vw;
+			width: 39vw;
 		}
 
 		nav, main {
-			margin-left: 32vw;
+			margin-left: 39vw;
+		}
+
+		article {
+			padding: 1.75rem;
 		}
 		
 	}
@@ -179,7 +185,6 @@ main {
 	grid-area: main;
 	/* padding for text */
 	article {
-		padding: 1.25rem;
 		padding-inline-end: 2rem;
 		padding-block-start: 2rem;
 	}
