@@ -21,12 +21,49 @@
 	background-color: var(--red);
 }
 
+/* ~~ grid layout ~~ */
+body {
+	display: grid;
+
+	/* mobile layout */
+	@media (width < 928px) {
+		grid-template-columns: 100vw;
+		grid-template-areas:
+		"figure"
+		"header"
+		"navigation"
+		"main";
+	}
+
+	/* tablet layout */
+	@media (width > 927px) {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas:
+			"header navigation"
+			"figure main"
+			"figure main";
+	}
+}
+
 /* ~~ cover ~~ */
 figure {
-	aspect-ratio: 1 / 1;
-	margin-block-start: 2.25rem;
-	margin-block-end: 3.75rem;
-	display: flex;
+	grid-area: figure;
+
+	/* mobile only styles */
+	@media (width < 928px) {
+		aspect-ratio: 1 / 1;
+		margin-block-start: 2.25rem;
+		margin-block-end: 3.75rem;
+		display: flex;
+	}
+
+	/* tablet and up styles */
+	@media (width > 927px) {
+		position: sticky;
+		top: 4rem;
+		align-self: start;
+	}
+
 	background-color: var(--red);
 	flex-direction: column;
 	align-items: center;
@@ -51,6 +88,10 @@ figcaption {
 }
 
 /* ~~ title ~~ */
+header {
+	grid-area: header;
+}
+
 h1 {
 	color: var(--white);
 	font-weight: 700;
@@ -69,7 +110,12 @@ h1 {
 	}
 }
 
+
 /* ~~ navigation ~~ */
+nav {
+	grid-area: navigation;
+}
+
 nav a {
 	display: grid;
 	grid-template-columns: 2rem auto;
@@ -119,6 +165,7 @@ svg {
 
 /* ~~ main content ~~ */
 main {
+	grid-area: main;
 	/* padding for text */
 	article {
 		padding: 1.25rem;
@@ -147,7 +194,7 @@ main {
 	article h2 {
 		font-weight: 600;
 		font-size: 1.25rem;
-		padding-block: 1rem;
+		padding-block-end: 1rem;
 		color: var(--black);
 	}
 
@@ -168,10 +215,6 @@ main {
 	/* colophon link styles */
 	#colophon a {
 		color: var(--white);
-	}
-
-	#colophon a:hover {
-		color: var(--black);
 	}
 
 	/* footer text color */
