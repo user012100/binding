@@ -35,7 +35,7 @@ body {
 		"main";
 	}
 
-	/* flip the header to the top at this breakpoint */
+	/* put the header at the top for this breakpoint */
 	@media (width > 639px) {
 		grid-template-areas:
 		"header"
@@ -105,7 +105,7 @@ body {
 			line {
 				stroke-dasharray: 20;
 				stroke-dashoffset: 20;
-				transition: stroke-dashoffset 0.25s ease-in-out;
+				transition: stroke-dashoffset 0.3s ease-in-out;
 			}
 		}
 
@@ -119,6 +119,10 @@ body {
 			hyphens: auto;
 			padding-inline: 1rem;
 			text-align: start;
+			
+			span {
+				display: block;
+			}
 		}
 
 		p, ul {
