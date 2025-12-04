@@ -4,8 +4,8 @@
 
 :root {
 	/* css custom properties */
-	--white: #e1dee4;
-	--gray: #2c0000;
+	--white: #e4e3e6;
+	--gray: #1e0606;
 	--black: #121111;
 	--red: #c01809;
 	--yellow: ;
@@ -21,7 +21,7 @@
 	background-color: var(--red);
 }
 
-/* ~~ general layout and small tweaks for breakpoints ~~ */
+/* ~~ general layout and tweaks for breakpoints ~~ */
 body {
 	display: grid;
 	grid-template-columns: 100vw;
@@ -35,7 +35,7 @@ body {
 		"main";
 	}
 
-	/* tablet layout only */
+	/* flip the header to the top at this breakpoint */
 	@media (width > 639px) {
 		grid-template-areas:
 		"header"
@@ -45,51 +45,120 @@ body {
 	}
 
 	/* mobile + tablet layout */
-	@media (width <= 1024px) {
+	@media (width < 1024px) {
 		figure {
 			margin-block-start: 2.25rem;
 			margin-block-end: 3.75rem;
 		}
 
-		article {
+		nav a {
+			padding-inline-end: 5vw;
+		}
+
+		article, footer {
 			padding: 1.25rem;
+		}
+
+		h1 {
+			text-align: center;
 		}
 	}
 
 	/* desktop layout */
-	@media (width > 1024px) {
+	@media (width >= 1024px) {
 		display: block;
 
 		figure, header {
 			position: fixed;
 			left: 0;
-			min-width: 39vw;
-			width: 39vw;
+			min-width: 40vw;
+			width: 40vw;
 		}
 
 		figure {
 			margin-block: 1rem;
 			bottom: 0;
+			z-index: -1;
 		}
 
 		nav, main {
-			margin-left: 39vw;
+			margin-left: 40vw;
+			z-index: 1;
+			column-gap: 2rem;
 		}
 
-		article {
+		nav a {
+			padding-inline-end: 2.5vw;
+		}
+
+		nav a:hover svg {
+			opacity: 100;
+		}
+
+		nav a:hover svg line {
+			stroke-dashoffset: 0;
+		}
+
+		svg {
+			opacity: 0;
+
+			line {
+				stroke-dasharray: 20;
+				stroke-dashoffset: 20;
+				transition: stroke-dashoffset 0.25s ease-in-out;
+			}
+		}
+
+		article, footer {
 			padding: 1.75rem;
 		}
 
 		h1 {
-			margin-block: 0.09rem;
-			line-height: 4.67rem;
+			margin-block: 0.05rem;
+			line-height: 4.68rem;
 			hyphens: auto;
+			padding-inline: 1rem;
+			text-align: start;
+		}
+
+		p, ul {
+			max-width: 65ch;
 		}
 
 		h1 span {
-			display: block;
+			overflow: auto;
 		}
+
+		#colophon, footer {
+			border-left: var(--stroke-width) solid var(--white);
+		}
+		
 	}
+
+	/* larger desktop layout */
+	@media (width >= 1600px) {
+		nav,
+		main {
+			max-width: 52rem;
+			margin-left: 40vw;
+			margin-right: auto;
+		}
+
+		#colophon {
+			border-right: var(--stroke-width) solid var(--white);
+		}
+
+		footer {
+			border-right: var(--stroke-width) solid var(--white);
+		}
+
+	}
+
+	/* extremely large layout just in case */
+	@media (width > 2500px) {
+		h1 {
+			text-align: center;
+		}
 }
 
 /* ~~ cover ~~ */
@@ -116,9 +185,9 @@ figure {
 figcaption {
 	color: var(--gray);
 	font-style: italic;
-	font-weight: 200;
+	font-weight: 300;
 	/* need to fix this */
-	font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+	font-size: 0.85rem;
 	line-height: 0.7lh;
 }
 
@@ -133,13 +202,6 @@ h1 {
 	text-transform: uppercase;
 	font-size: clamp(1.25rem, 7.8vw, 4.3rem);
 	padding-block: 0.75rem;
-	text-align: center;
-
-	/* desktop styles */
-	@media (width > 1024px) {
-		padding-inline: 1rem;
-		text-align: start;
-	}
 }
 
 
@@ -150,10 +212,9 @@ nav {
 
 nav a {
 	display: grid;
-	grid-template-columns: 2rem auto;
-	column-gap: 1.75rem;
+	grid-template-columns: 3rem auto 1.5rem;
 	padding-block: 1rem;
-	padding-inline-end: 1rem;
+	column-gap: 5vw;
 
 	grid-template-areas:
 		"index title graphic";
@@ -178,10 +239,9 @@ ol li {
 /* index roman numerals */
 p.index {
 	grid-area: index;
-
 	justify-self: center;
-	padding-inline-start: 2rem;
 	font-weight: 600;
+	padding-inline-start: 5vw;
 }
 
 /* nav item title text */
@@ -193,16 +253,18 @@ p.title {
 /* svg for affordance on mobile */
 svg {
 	grid-area: graphic;
+	max-width: clamp(1rem, 6vw, 2rem);
+	max-height: clamp(1rem, 6vw, 2rem);
+	align-self: center;
+
+	line {
+		stroke-width: calc(var(--stroke-width)/2);
+	}
 }
 
 /* ~~ main content ~~ */
 main {
 	grid-area: main;
-	/* padding for text */
-	article {
-		padding-inline-end: 2rem;
-		padding-block-start: 2rem;
-	}
 
 	/* color for introduction */
 	article {
@@ -214,16 +276,11 @@ main {
 	#colophon {
 		background-color: var(--red);
 		color: var(--white);
-
-		/* desktop only for separation */
-		@media (width > 1024px) {
-			border-left: var(--stroke-width) solid var(--white);
-		}
 	}
 
-	#attribution {
-		padding-block-start: 4rem;
+	footer {
 		color: var(--black);
+		border-top: var(--stroke-width) solid var(--white);
 	}
 
 	/* subheadings */
@@ -231,12 +288,12 @@ main {
 		font-weight: 600;
 		font-size: 1.25rem;
 		padding-block-end: 1rem;
-		color: var(--black);
+		color: var(--gray);
 	}
 
-	/* paragraphs and list item padding */
+	/* line length and list item padding */
 	p, li {
-		line-height: 1.05lh;
+		line-height: 1.075lh;
 		padding-block-end: 1.5rem;
 	}
 
@@ -244,17 +301,21 @@ main {
 	a {
 		color: var(--black);
 		text-decoration: underline;
-		text-underline-offset: 0.2em;
+		text-underline-offset: 0.25em;
 		font-style: italic;
 	}
 
-	/* colophon link styles */
-	#colophon a {
+	/* colophon and footer link styles */
+	#colophon a, footer a {
 		color: var(--white);
 	}
 
-	#colophon a:hover {
+	#colophon a:hover, footer a:hover {
 		color: var(--black);
+	}
+
+	#credit {
+		padding-block-end: 1rem;
 	}
 
 	/* emphasized text */
