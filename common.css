@@ -6,7 +6,7 @@
 	/* css custom properties */
 	--white: #e1dee4;
 	--gray: #2c0000;
-	--black: #181717;
+	--black: #121111;
 	--red: #c01809;
 	--yellow: ;
 	--pink: ;
@@ -21,29 +21,18 @@
 	background-color: var(--red);
 }
 
-/* ~~ grid layout ~~ */
-body {
-	display: grid;
-	grid-template-columns: 100vw;
-	/* only on mobile */
-	grid-template-areas:
-		"figure"
-		"header"
-		"nav"
-		"main";
-}
-
 /* ~~ cover ~~ */
 figure {
-	aspect-ratio: 1 / 1;
-	display: flex;
+
+		aspect-ratio: 1 / 1;
+		margin-block-start: 2.25rem;
+		margin-block-end: 3.75rem;
+		display: flex;
+
+	background-color: var(--red);
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	/* should only be on mobile */
-	margin-block-start: 2.25rem;
-	margin-block-end: 3.75rem;
 }
 
 /* image + caption container */
@@ -63,20 +52,25 @@ figcaption {
 	line-height: 0.7lh;
 }
 
-/* title */
+/* ~~ title ~~ */
 h1 {
 	color: var(--white);
 	font-weight: 700;
 	text-transform: uppercase;
-	text-align: center;
 	font-size: clamp(1.25rem, 7.8vw, 3rem);
 	padding-block: 0.75rem;
 
-	/* only on mobile */
-	span {
-		display: inline;
+	/* mobile only styles */
+	@media (width < 928px) {
+		text-align: center;
+	}
+
+	/* tablet and up styles */
+	@media (width > 927px) {
+		padding-inline: 1rem;
 	}
 }
+
 
 /* ~~ navigation ~~ */
 nav a {
@@ -86,9 +80,8 @@ nav a {
 	padding-block: 1rem;
 	padding-inline-end: 1rem;
 
-	/* only on mobile */
 	grid-template-areas:
-		"index title";
+		"index title graphic";
 
 	font-size: clamp(1rem, 6vw, 2rem);
 
@@ -112,42 +105,81 @@ p.index {
 	grid-area: index;
 
 	justify-self: center;
-	padding-inline-start: 1.5rem;
-	font-weight: 500;
+	padding-inline-start: 2rem;
+	font-weight: 600;
 }
 
+/* nav item title text */
 p.title {
 	grid-area: title;
-	font-weight: 500;
+	font-weight: 600;
 }
 
-main {
+/* svg for affordance on mobile */
+svg {
+	grid-area: graphic;
+}
 
+/* ~~ main content ~~ */
+main {
+	/* padding for text */
 	article {
-		background-color: var(--white);
-		color: var(--red);
 		padding: 1.25rem;
+		padding-inline-end: 2rem;
 		padding-block-start: 2rem;
 	}
 
-	footer {
+	/* color for introduction */
+	article {
 		background-color: var(--white);
 		color: var(--red);
 	}
 
-	p {
-		line-height: 0.95lh;
-		padding-block-end: 1rem;
+	/* color for colophon */
+	#colophon {
+		background-color: var(--red);
+		color: var(--white);
 	}
 
+	#attribution {
+		padding-block-start: 4rem;
+		color: var(--black);
+	}
+
+	/* subheadings */
+	article h2 {
+		font-weight: 600;
+		font-size: 1.25rem;
+		padding-block-end: 1rem;
+		color: var(--black);
+	}
+
+	/* paragraphs and list item padding */
+	p, li {
+		line-height: 0.99lh;
+		padding-block-end: 1.5rem;
+	}
+
+	/* link styles */
 	a {
 		color: var(--black);
 		text-decoration: underline;
+		text-underline-offset: 0.2em;
 		font-style: italic;
 	}
 
+	/* colophon link styles */
+	#colophon a {
+		color: var(--white);
+	}
+
+	/* footer text color */
+	footer {
+		color: var(--white);
+	}
+
+	/* emphasized text */
 	em {
 		font-style: italic;
-		text-decoration: underline;
 	}
 }
