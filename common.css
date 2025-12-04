@@ -21,13 +21,13 @@
 	background-color: var(--red);
 }
 
-/* ~~ grid layout ~~ */
+/* ~~ general layout ~~ */
 body {
 	display: grid;
+	grid-template-columns: 100vw;
 
 	/* mobile layout */
-	@media (width < 928px) {
-		grid-template-columns: 100vw;
+	@media (width < 667px) {
 		grid-template-areas:
 		"figure"
 		"header"
@@ -36,12 +36,17 @@ body {
 	}
 
 	/* tablet layout */
-	@media (width > 927px) {
-		grid-template-columns: 1fr 2fr;
+	@media (width > 639px) {
 		grid-template-areas:
-			"header navigation"
-			"figure main"
-			"figure main";
+		"header"
+		"figure"
+		"navigation"
+		"main";
+	}
+
+	/* desktop layout */
+	@media (width > 1024px) {
+		display: block;
 	}
 }
 
@@ -49,20 +54,10 @@ body {
 figure {
 	grid-area: figure;
 
-	/* mobile only styles */
-	@media (width < 928px) {
-		aspect-ratio: 1 / 1;
-		margin-block-start: 2.25rem;
-		margin-block-end: 3.75rem;
-		display: flex;
-	}
-
-	/* tablet and up styles */
-	@media (width > 927px) {
-		position: sticky;
-		top: 4rem;
-		align-self: start;
-	}
+	aspect-ratio: 1 / 1;
+	margin-block-start: 2.25rem;
+	margin-block-end: 3.75rem;
+	display: flex;
 
 	background-color: var(--red);
 	flex-direction: column;
@@ -98,15 +93,12 @@ h1 {
 	text-transform: uppercase;
 	font-size: clamp(1.25rem, 7.8vw, 3rem);
 	padding-block: 0.75rem;
+	text-align: center;
 
-	/* mobile only styles */
-	@media (width < 928px) {
-		text-align: center;
-	}
-
-	/* tablet and up styles */
-	@media (width > 927px) {
+	/* desktop styles */
+	@media (width > 1024px) {
 		padding-inline: 1rem;
+		text-align: start;
 	}
 }
 
@@ -183,6 +175,11 @@ main {
 	#colophon {
 		background-color: var(--red);
 		color: var(--white);
+
+		/* desktop only for separation */
+		@media (width > 1024px) {
+			border-left: var(--stroke-width) solid var(--white);
+		}
 	}
 
 	#attribution {
@@ -215,6 +212,10 @@ main {
 	/* colophon link styles */
 	#colophon a {
 		color: var(--white);
+	}
+
+	#colophon a:hover {
+		color: var(--black);
 	}
 
 	/* footer text color */
