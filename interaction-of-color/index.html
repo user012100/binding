@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Interaction of Color</title>
+		<meta charset="UTF-8">
+		<title>Project 3: Binding</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- using CSS layers -->
 		<style>
 			@import '../reset.css' layer(reset);
 			@import '../common.css' layer(common);
@@ -10,22 +12,67 @@
 		</style>
 	</head>
 	<body>
+		<!-- section 1, cover -->
+		<figure>
+			<div class="cover">
+				<img src="../assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				<figcaption>Josef Albers, Homage to the Square.</figcaption>
+			</div>
+		</figure>
+		<!-- section 2, title -->
 		<header>
-			<nav>
-				<a href="../">Main Page</a>
-				<a href="../homage-to-an-homage-of-an-homage/">Next</a>
-			</nav>
 			<h1>
-				<span>Interaction</span>
+				<!-- using &shy; to hyphenate word, from mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/hyphens -->
+				<span>Inter&shy;action</span>
 				<span>of</span>
 				<span>Color</span>
 			</h1>
-			<span>
-				<p>by Josef Albers</p>
-			</span>
 		</header>
+		<!-- section 3, navigation -->
+		<nav>
+			<ol>
+				<li>
+					<a href="../">
+						<p class="index">I.</p>
+						<p class="title">Introduction</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="#interaction-of-color" id="active-link">
+						<p class="index">II.</p>
+						<p class="title">Interaction</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="../homage-to-an-homage-of-an-homage">
+						<p class="index">III.</p>
+						<!-- maybe use breakpoints here for longer titles? idk -->
+						<p class="title">Homage</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="../everyday-color-theory">
+						<p class="index">IV.</p>
+						<p class="title">Theory</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+			</ol>
+		</nav>
+		<!-- section 4, main content -->
 		<main>
-			<article>
+			<article id="interaction-of-color">
 				<h2>Color juxtaposition — harmony — quantity</h2>
 				<h3>Harmony</h3>
 				<p>

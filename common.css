@@ -4,13 +4,13 @@
 
 :root {
 	/* css custom properties */
-	--white: #e4e3e6;
-	--gray: #1e0606;
+	--white: #E4E3E6;
+	--gray: #1E0606;
 	--black: #121111;
-	--red: #c01809;
-	--yellow: ;
-	--pink: ;
-	--blue: ;
+	--red: #C01809;
+	--orange: #E13E15;
+	--pink: #c9436b;
+	--blue: #1331df;
 	--stroke-width: 0.1rem;
 
 	/* base font */
@@ -71,8 +71,8 @@ body {
 		figure, header {
 			position: fixed;
 			left: 0;
-			min-width: 40vw;
-			width: 40vw;
+			min-width: 44vw;
+			width: 44vw;
 		}
 
 		figure {
@@ -82,7 +82,7 @@ body {
 		}
 
 		nav, main {
-			margin-left: 40vw;
+			margin-left: 44vw;
 			z-index: 1;
 			column-gap: 2rem;
 		}
@@ -144,7 +144,7 @@ body {
 		nav,
 		main {
 			max-width: 52rem;
-			margin-left: 40vw;
+			margin-left: 44vw;
 			margin-right: auto;
 		}
 
@@ -291,8 +291,15 @@ main {
 	/* subheadings */
 	article h2 {
 		font-weight: 600;
-		font-size: 1.25rem;
-		padding-block-end: 1rem;
+		font-size: 1.3rem;
+		padding-block-end: 1.5rem;
+		color: var(--gray);
+	}
+
+	article h3 {
+		font-weight: 600;
+		font-size: 1.15rem;
+		padding-block-end: 1.5rem;
 		color: var(--gray);
 	}
 
@@ -310,6 +317,11 @@ main {
 		font-style: italic;
 	}
 
+	/* #active-link {
+		background-color: var(--red);
+		color: var(--white);
+	} */
+
 	/* colophon and footer link styles */
 	#colophon a, footer a {
 		color: var(--white);
@@ -326,5 +338,18 @@ main {
 	/* emphasized text */
 	em {
 		font-style: italic;
+	}
+
+	/* specific link hover colors */
+	a#interaction-link:hover {
+		color: var(--orange);
+	}
+
+	a#homage-link:hover {
+		color: var(--pink);
+	}
+
+	a#theory-link:hover {
+		color: var(--blue);
 	}
 }

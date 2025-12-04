@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Homage to an Homage of an Homage</title>
+		<meta charset="UTF-8">
+		<title>Project 3: Binding</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- using CSS layers -->
 		<style>
 			@import '../reset.css' layer(reset);
 			@import '../common.css' layer(common);
@@ -10,20 +12,65 @@
 		</style>
 	</head>
 	<body>
+		<!-- section 1, cover -->
+		<figure>
+			<div class="cover">
+				<img src="../assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				<figcaption>Josef Albers, Homage to the Square.</figcaption>
+			</div>
+		</figure>
+		<!-- section 2, title -->
 		<header>
-			<nav>
-				<a href="../">Main Page</a>
-				<a href="../everyday-color-theory/">Next</a>
-			</nav>
 			<h1>
+				<!-- using &shy; to hyphenate word, from mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/hyphens -->
+				<span>Homage to an</span>
+				<span>Homage of an</span>
 				<span>Homage</span>
-				<span>Homage</span>
-				<span>Homa</span>
 			</h1>
-			<span>
-				<p>by Tamara Shopsin</p>
-			</span>
 		</header>
+		<!-- section 3, navigation -->
+		<nav>
+			<ol>
+				<li>
+					<a href="../">
+						<p class="index">I.</p>
+						<p class="title">Introduction</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="#interaction-of-color" id="active-link">
+						<p class="index">II.</p>
+						<p class="title">Interaction</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="../homage-to-an-homage-of-an-homage">
+						<p class="index">III.</p>
+						<!-- maybe use breakpoints here for longer titles? idk -->
+						<p class="title">Homage</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="../everyday-color-theory">
+						<p class="index">IV.</p>
+						<p class="title">Theory</p>
+						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+						</svg>
+					</a>
+				</li>
+			</ol>
+		</nav>
+		<!-- section 4, main content -->
 		<main>
 			<article>
 				<p>
@@ -53,13 +100,11 @@
 				<p>
 					The painting is tan within yellow within yellow. It is a copy of Homage to the Square, the painting Albers painted over and over and over for 26 years. All of Albers’s Homages use color straight from the tube. All are nested squares painted on primed masonite. There are more than 2,000 versions of Homage to the Square made by Albers. They live all over the world — none of them in Casa Luis Barragán. Albers knew about Barragán’s bootleg. He respected Barragán and was flattered by it. They met more than once. They liked each other.
 				</p>
-
 				<section>
 					<p>
 						Experience teaches that in visual perception there is a discrepancy between physical fact and psychic effect.
 					</p>
 				</section>
-
 				<p>
 					He taught the idea using color, but believed it could be applied to all areas of life. Albers described the aim of his teachings as “to open eyes,” and he believed that doctors and lawyers would benefit from this as much as artists.
 				</p>
@@ -72,13 +117,11 @@
 				<p>
 					Anni also taught at Black Mountain. But her passion was weaving. In 1935 the Albers took a road trip to Mexico from Black Mountain and fell in love with the country, especially its pre-Hispanic art, colors, and textiles. The Albers drove there every summer until they moved to Connecticut in 1950, where Josef became Chairman of Design at the Yale University School of Art. Nicholas Fox Weber of the Albers Foundation recalls:
 				</p>
-
 				<section>
 					<p>
 						Albers enjoyed pointing out the way that spoken and written language could be misleading; when he would drive or give visitors directions to his modest suburban home in the Connecticut town of Orange, he would joyfully point out a green road sign with white lettering that announced “This is Orange.”
 					</p>
 				</section>
-
 				<p>
 					Josef Albers lived in a town called Orange!
 				</p>
@@ -115,13 +158,11 @@
 				<p>
 					My best guess is he wanted to get his perception discrepancy idea to as many people as possible. His color exercises were hard and time consuming. It is a lot quicker and easier to absorb the paintings. Homage to the Square has the potential to hold all the color lessons in it. And it follows that the more paintings you make the more eyes you open. In his own words again:
 				</p>
-
 				<section>
 					<p>
 						To distribute material possessions is to divide them. To distribute spiritual possessions is to multiply them.
 					</p>
 				</section>
-
 				<p>
 					At Casa Gilardi, after saying I should come back in April when the Jacaranda tree is covered in purple flowers, Karla ended the tour by leading me into a yellow hall lined with windows painted yellow.
 				</p>
@@ -149,13 +190,11 @@
 				<p>
 					But it is not a fact.
 				</p>
-
 				<section>
 					<p>
 						According to his friend and colleague, architect Andrés Casillas, Barragán came across the printed fabric in a department store on a visit to the U.S. in the early 1960s, and bought it (and another now framed and resting on the library desk) for “one dollar each,” proclaiming them perfect for his house. Albers, demonstrating a parallel lack of pretension, approved.
 					</p>
 				</section>
-
 				<p>
 					In retrospect the fake was definitely printed on fabric, not painted on board. And it was not really an homage.
 				</p>

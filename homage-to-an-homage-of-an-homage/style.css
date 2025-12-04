@@ -1,12 +1,33 @@
-/* base style */
+/* changing colors for this specific page */
 :root {
-	--red: #EF82A9;
-	--white: #dddae4;
-	--blue: #53ABDA;
-	--dark-blue: #194d85;
-	--green: #58AC3F;
-	--purple: #9D448A;
-	--yellow: #FADE4B;
+	--page-color: var(--pink);
 
-	background-color: var(--blue);
+	background-color: var(--page-color);
+}
+
+figure {
+	background-color: var(--page-color);
+}
+
+nav a {
+	color: var(--page-color);
+}
+
+nav a:hover {
+	background-color: var(--page-color);
+	color: var(--white);
+}
+
+ol li {
+	border-bottom: var(--stroke-width) solid var(--page-color);
+}
+
+main {
+	article {
+		color: var(--page-color);
+	}
+
+	#colophon {
+		background-color: var(--page-color);
+	}
 }
