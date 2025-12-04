@@ -33,6 +33,11 @@ body {
 		"header"
 		"navigation"
 		"main";
+
+		figure {
+			margin-block-start: 2.25rem;
+			margin-block-end: 3.75rem;
+		}
 	}
 
 	/* tablet layout */
@@ -42,21 +47,35 @@ body {
 		"figure"
 		"navigation"
 		"main";
+
+		figure {
+			margin-block-start: 2.25rem;
+			margin-block-end: 3.75rem;
+		}
 	}
 
 	/* desktop layout */
 	@media (width > 1024px) {
 		display: block;
+
+		figure, header {
+			position: fixed;
+			left: 0;
+			min-width: 32vw;
+			width: 32vw;
+		}
+
+		nav, main {
+			margin-left: 32vw;
+		}
+		
 	}
 }
 
 /* ~~ cover ~~ */
 figure {
 	grid-area: figure;
-
 	aspect-ratio: 1 / 1;
-	margin-block-start: 2.25rem;
-	margin-block-end: 3.75rem;
 	display: flex;
 
 	background-color: var(--red);
@@ -67,8 +86,6 @@ figure {
 
 /* image + caption container */
 .cover {
-	max-width: 75%;
-	max-height: 75%;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5vh;
@@ -78,7 +95,7 @@ figcaption {
 	color: var(--gray);
 	font-style: italic;
 	font-weight: 200;
-	font-size: clamp(0.75rem, 2.75vw, 0.85rem);
+	font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 	line-height: 0.7lh;
 }
 
@@ -91,7 +108,7 @@ h1 {
 	color: var(--white);
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: clamp(1.25rem, 7.8vw, 3rem);
+	font-size: clamp(1.25rem, 7.8vw, 4.25rem);
 	padding-block: 0.75rem;
 	text-align: center;
 
