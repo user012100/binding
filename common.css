@@ -23,12 +23,10 @@
 
 /* ~~ cover ~~ */
 figure {
-
-		aspect-ratio: 1 / 1;
-		margin-block-start: 2.25rem;
-		margin-block-end: 3.75rem;
-		display: flex;
-
+	aspect-ratio: 1 / 1;
+	margin-block-start: 2.25rem;
+	margin-block-end: 3.75rem;
+	display: flex;
 	background-color: var(--red);
 	flex-direction: column;
 	align-items: center;
@@ -70,7 +68,6 @@ h1 {
 		padding-inline: 1rem;
 	}
 }
-
 
 /* ~~ navigation ~~ */
 nav a {
@@ -150,7 +147,7 @@ main {
 	article h2 {
 		font-weight: 600;
 		font-size: 1.25rem;
-		padding-block-end: 1rem;
+		padding-block: 1rem;
 		color: var(--black);
 	}
 
@@ -171,6 +168,10 @@ main {
 	/* colophon link styles */
 	#colophon a {
 		color: var(--white);
+	}
+
+	#colophon a:hover {
+		color: var(--black);
 	}
 
 	/* footer text color */
