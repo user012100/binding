@@ -425,6 +425,10 @@ main {
 		font-style: italic;
 	}
 
+	a:hover {
+		color: var(--red);
+	}
+
 	/* text emphasized section style */
 	section {
 		color: var(--black);
