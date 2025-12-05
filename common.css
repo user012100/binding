@@ -330,7 +330,6 @@ p.title {
 .next-button:hover {
 	background-color: var(--red);
 	color: var(--white);
-	border-bottom: var(--stroke-width) solid var(--white);
 }
 
 p.index-button {
@@ -372,6 +371,7 @@ main {
 		background-color: var(--red);
 		color: var(--white);
 		padding-block-end: 4.5rem;
+		border-top: var(--stroke-width) solid var(--white);
 	}
 
 	footer {
