@@ -46,3 +46,7 @@ main {
 		background-color: var(--page-color);
 	}
 }
+
+.divider {
+	border-top: var(--stroke-width) solid var(--page-color);
+}
