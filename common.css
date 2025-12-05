@@ -281,7 +281,7 @@ nav a:hover {
 	color: var(--white);
 }
 
-nav a#active-link {
+nav a#active-link, nav a#active-link-home {
 	background-color: var(--red);
 	color: var(--white);
 }
