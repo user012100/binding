@@ -18,8 +18,17 @@ nav a:hover {
 	color: var(--white);
 }
 
-ol li {
+nav a#active-link {
+	background-color: var(--page-color);
+	color: var(--white);
+}
+
+nav.top-nav li {
 	border-bottom: var(--stroke-width) solid var(--page-color);
+}
+
+nav.bottom-nav li {
+	border-top: var(--stroke-width) solid var(--page-color);
 }
 
 main {

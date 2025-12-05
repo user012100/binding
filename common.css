@@ -5,12 +5,12 @@
 :root {
 	/* css custom properties */
 	--white: #E4E3E6;
-	--gray: #1E0606;
+	--gray: #222222;
 	--black: #121111;
 	--red: #C01809;
-	--orange: #E13E15;
-	--pink: #c9436b;
-	--blue: #1331df;
+	--orange: #d53811;
+	--pink: rgb(210, 67, 110);
+	--blue: #3951db;
 	--stroke-width: 0.1rem;
 
 	/* base font */
@@ -42,6 +42,10 @@ body {
 		"figure"
 		"navigation"
 		"main";
+
+		/* h1 span {
+			margin-block-end: 1rem;
+		} */
 	}
 
 	/* mobile + tablet layout */
@@ -51,7 +55,7 @@ body {
 			margin-block-end: 3.75rem;
 		}
 
-		nav a {
+		nav a{
 			padding-inline-end: 5vw;
 		}
 
@@ -61,6 +65,14 @@ body {
 
 		h1 {
 			text-align: center;
+		}
+
+		h1 span {
+			line-height: 0.5lh;
+		}
+
+		ol:nth-child(1) {
+			border-top: var(--stroke-width) solid var(--white);
 		}
 	}
 
@@ -105,12 +117,12 @@ body {
 			line {
 				stroke-dasharray: 20;
 				stroke-dashoffset: 20;
-				transition: stroke-dashoffset 0.3s ease-in-out;
+				transition: stroke-dashoffset 0.25s ease-in-out;
 			}
 		}
 
 		article, footer {
-			padding: 1.75rem;
+			padding: 2.5rem;
 		}
 
 		h1 {
@@ -119,10 +131,6 @@ body {
 			hyphens: auto;
 			padding-inline: 1rem;
 			text-align: start;
-			
-			span {
-				display: block;
-			}
 		}
 
 		p, ul {
@@ -135,6 +143,14 @@ body {
 
 		#colophon, footer {
 			border-left: var(--stroke-width) solid var(--white);
+		}
+
+		#colophon {
+			padding-block-end: 4.25rem;
+		}
+
+		footer {
+			padding-block-start: 4.25rem;
 		}
 		
 	}
@@ -188,7 +204,7 @@ figure {
 }
 
 figcaption {
-	color: var(--gray);
+	color: var(--white);
 	font-style: italic;
 	font-weight: 300;
 	/* need to fix this */
@@ -209,9 +225,8 @@ h1 {
 	padding-block: 0.75rem;
 }
 
-
 /* ~~ navigation ~~ */
-nav {
+nav.top-nav {
 	grid-area: navigation;
 }
 
@@ -236,9 +251,18 @@ nav a:hover {
 	color: var(--white);
 }
 
+nav a#active-link {
+	background-color: var(--red);
+	color: var(--white);
+}
+
 /* buttons style */
-ol li {
+nav.top-nav li {
 	border-bottom: var(--stroke-width) solid var(--red);
+}
+
+nav.bottom-nav li {
+	border-top: var(--stroke-width) solid var(--red);
 }
 
 /* index roman numerals */
@@ -291,21 +315,21 @@ main {
 	/* subheadings */
 	article h2 {
 		font-weight: 600;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		padding-block-end: 1.5rem;
 		color: var(--gray);
 	}
 
 	article h3 {
 		font-weight: 600;
-		font-size: 1.15rem;
+		font-size: 1.25rem;
 		padding-block-end: 1.5rem;
 		color: var(--gray);
 	}
 
 	/* line length and list item padding */
 	p, li {
-		line-height: 1.075lh;
+		line-height: 1.074lh;
 		padding-block-end: 1.5rem;
 	}
 
@@ -317,10 +341,14 @@ main {
 		font-style: italic;
 	}
 
-	/* #active-link {
-		background-color: var(--red);
-		color: var(--white);
-	} */
+	/* text emphasized section style */
+	section {
+		color: var(--black);
+	}
+
+	#author {
+		color: var(--gray);
+	}
 
 	/* colophon and footer link styles */
 	#colophon a, footer a {
