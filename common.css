@@ -5,12 +5,12 @@
 :root {
 	/* css custom properties */
 	--white: #E4E3E6;
-	--gray: #111111;
+	--gray: #181818;
 	--black: #121111;
 	--red: #C01809;
 	--orange: #d03913;
-	--pink: #ce227e;
-	--blue: #455bd9;
+	--pink: #d0396b;
+	--blue: #5463bb;
 	--stroke-width: 0.1rem;
 
 	/* base font */
@@ -19,6 +19,11 @@
 	font-weight: 400;
 
 	background-color: var(--red);
+}
+
+html {
+	/* smooth scrolling for links, from mdn: https://developer.mozilla.org/docs/Web/CSS/scroll-behavior */
+	scroll-behavior: smooth;
 }
 
 /* ~~ general layout and tweaks for breakpoints ~~ */
@@ -33,6 +38,14 @@ body {
 		"header"
 		"navigation"
 		"main";
+
+		#introduction, #interaction-of-color, #everyday-color-theory {
+			scroll-margin-top: 3.5rem;
+		}
+
+		#homage {
+			scroll-margin-top: 5.5rem;
+		}
 	}
 
 	/* put the header at the top for this breakpoint */
@@ -47,6 +60,18 @@ body {
 	/* tablet layout only */
 	@media (width >= 640px) and (width < 1024px) {
 		margin-block-start: 5vh;
+
+		h1 {
+			padding: 0rem;
+		}
+
+		#introduction, #interaction-of-color, #everyday-color-theory {
+			scroll-margin-top: 4.75rem;
+		}
+
+		#homage {
+			scroll-margin-top: 10rem;
+		}
 	}
 
 	/* mobile + tablet layout */
@@ -60,6 +85,10 @@ body {
 			padding-inline-end: 5vw;
 		}
 
+		.next-button {
+			padding-inline-end: 5vw;
+		}
+
 		article, footer {
 			padding: 1.25rem;
 		}
@@ -68,12 +97,14 @@ body {
 			text-align: center;
 		}
 
-		h1 {
-			line-height: 1.45lh;
-		}
-
 		ol:nth-child(1) {
 			border-top: var(--stroke-width) solid var(--white);
+		}
+
+		header {
+			position: sticky;
+			top: 0;
+			background-color: var(--red);
 		}
 	}
 
@@ -91,7 +122,7 @@ body {
 		figure {
 			margin-block: 1rem;
 			bottom: 0;
-			z-index: -1;
+			z-index: 0;
 		}
 
 		nav, main {
@@ -100,15 +131,15 @@ body {
 			column-gap: 2rem;
 		}
 
-		nav a {
+		nav a, .next-button {
 			padding-inline-end: 2.5vw;
 		}
 
-		nav a:hover svg {
+		nav a:hover svg, .next-button:hover svg {
 			opacity: 100;
 		}
 
-		nav a:hover svg line {
+		nav a:hover svg line, .next-button:hover svg line {
 			stroke-dashoffset: 0;
 		}
 
@@ -148,10 +179,10 @@ body {
 	}
 
 	/* larger desktop layout */
-	@media (width >= 1600px) {
+	@media (width >= 1550px) {
 		nav,
 		main {
-			max-width: 52rem;
+			max-width: 48rem;
 			margin-left: 44vw;
 			margin-right: auto;
 		}
@@ -214,15 +245,15 @@ h1 {
 	color: var(--white);
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: clamp(1.25rem, 7.8vw, 4.3rem);
-	padding-block: 0.75rem;
+	font-size: clamp(1.25rem, 7.1vw, 4.3rem);
+	padding: 0.75rem;
+}
+
+h1:hover {
+	color: var(--gray);
 }
 
 /* ~~ navigation ~~ */
-nav.top-nav {
-	grid-area: navigation;
-}
-
 nav a {
 	display: grid;
 	grid-template-columns: 3rem auto 1.5rem;
@@ -272,6 +303,42 @@ p.title {
 	font-weight: 600;
 }
 
+.next-button {
+	display: grid;
+	grid-template-columns: 3rem auto 1.5rem;
+	padding-block: 1rem;
+	column-gap: 5vw;
+
+	grid-template-areas:
+		"index title graphic";
+
+	font-size: clamp(1rem, 6vw, 2rem);
+	text-decoration: none;
+	font-style: normal;
+
+	background-color: var(--white);
+	color: var(--red);
+	border-top: var(--stroke-width) solid var(--red);
+}
+
+.next-button:hover {
+	background-color: var(--red);
+	color: var(--white);
+	border-bottom: var(--stroke-width) solid var(--white);
+}
+
+p.index-button {
+	grid-area: index;
+	justify-self: center;
+	font-weight: 600;
+	padding-inline-start: 5vw;
+}
+
+p.title-button {
+	grid-area: title;
+	font-weight: 600;
+}
+
 /* svg for affordance on mobile */
 svg {
 	grid-area: graphic;
@@ -302,9 +369,14 @@ main {
 	}
 
 	footer {
-		color: var(--black);
+		color: var(--white);
 		border-top: var(--stroke-width) solid var(--white);
 		padding-block-start: 4.5rem;
+		padding-block-end: 1.8rem;
+	}
+
+	#credit {
+		font-size: 0.85rem;
 	}
 
 	/* subheadings */
@@ -315,6 +387,10 @@ main {
 		color: var(--gray);
 	}
 
+	article#colophon h2 {
+		color: var(--black);
+	}
+
 	article h3 {
 		font-weight: 600;
 		font-size: 1.25rem;
@@ -323,7 +399,7 @@ main {
 	}
 
 	/* line length and list item padding */
-	p, li {
+	article p, li {
 		line-height: 1.074lh;
 		padding-block-end: 1.5rem;
 	}

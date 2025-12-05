@@ -10,22 +10,26 @@
 			@import 'common.css' layer(common);
 		</style>
 	</head>
-	<body>
+	<body id="top">
 		<!-- section 1, cover -->
 		<figure>
 			<div class="cover">
-				<img src="assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				<a href="#top">
+					<img src="assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				</a>
 				<figcaption>Josef Albers, Homage to the Square.</figcaption>
 			</div>
 		</figure>
 		<!-- section 2, title -->
 		<header>
-			<h1>
-				<!-- using &shy; to hyphenate word, from mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/hyphens -->
-				<span>Persist&shy;ence</span>
-				<span>of</span>
-				<span>Color</span>
-			</h1>
+			<a href="#top">
+				<h1>
+					<!-- using &shy; to hyphenate word, from mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/hyphens -->
+					<span>Persist&shy;ence</span>
+					<span>of</span>
+					<span>Color</span>
+				</h1>
+			</a>
 		</header>
 		<!-- section 3, navigation -->
 		<nav class="top-nav">
@@ -80,6 +84,13 @@
 				<p>By combining form and reference, this digital binding reflects on how visual language evolves through reuse and reinterpretation. Through spatial relationships and juxtaposition, color becomes a constant that changes as the viewer interacts with it.</p>
 				<p>Josef Albers’ ideas still persist because they are grounded in perception and remain applicable across the ever-changing technologies. His studies of color established a way of thinking that continues to shape how designers approach digital screens, accessibility, branding, and interaction today.</p>
 			</article>
+			<a href="interaction-of-color" class="next-button">
+				<p class="index-button">II.</p>
+				<p class="title-button">Next: Interaction</p>
+				<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+					<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
+				</svg>
+			</a>
 			<article id="colophon">
 				<h2>Original Texts</h2>
 				<ul>
@@ -109,7 +120,7 @@
 			<!-- section 5, footer -->
 			<footer>
 				<p>This project was designed and developed by <a href="https://ali001.com">Ali Salifov</a> for the <a href="https://typography-interaction-2526.github.io/">Typography & Interaction</a> course at The Parsons School of Design, exploring color as a visual system through digital form.</p>
-				<section id="credit">© 2025 Ali Salifov. All rights reserved.</section>
+				<p id="credit">© 2025 Ali Salifov. All rights reserved.</p>
 			</footer>
 		</main>
 	</body>

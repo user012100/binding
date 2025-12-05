@@ -11,22 +11,25 @@
 			@import 'style.css' layer(page);
 		</style>
 	</head>
-	<body>
+	<body id="top">
 		<!-- section 1, cover -->
 		<figure>
 			<div class="cover">
-				<img src="../assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				<a href="#top">
+					<img src="../assets/albers-square.jpg" alt="Abstract painting of nested squares in contrasting red tones.">
+				</a>
 				<figcaption>Josef Albers, Homage to the Square.</figcaption>
 			</div>
 		</figure>
 		<!-- section 2, title -->
 		<header>
-			<h1>
-				<!-- using &shy; to hyphenate word, from mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/hyphens -->
-				<span>Everyday</span>
-				<span>Color</span>
-				<span>Theory</span>
-			</h1>
+			<a href="#top">
+				<h1>
+					<span>Everyday</span>
+					<span>Color</span>
+					<span>Theory</span>
+				</h1>
+			</a>
 		</header>
 		<!-- section 3, navigation -->
 		<nav class="top-nav">
@@ -177,18 +180,18 @@
 		<nav class="bottom-nav">
 			<ol>
 				<li>
-					<a href="../">
-						<p class="index">I.</p>
-						<p class="title">Return: Introduction</p>
+					<a href="../homage-to-an-homage-of-an-homage">
+						<p class="index">II.</p>
+						<p class="title">Previous: Homage</p>
 						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
 							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
 						</svg>
 					</a>
 				</li>
 				<li>
-					<a href="../homage-to-an-homage-of-an-homage">
-						<p class="index">II.</p>
-						<p class="title">Previous: Homage</p>
+					<a href="../">
+						<p class="index">I.</p>
+						<p class="title">Return: Introduction</p>
 						<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
 							<line x1="0" y1="12" x2="12" y2="0" stroke="currentColor"/>
 						</svg>

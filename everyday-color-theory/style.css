@@ -40,3 +40,9 @@ main {
 		background-color: var(--page-color);
 	}
 }
+
+@media (width < 1024px) {
+	header {
+		background-color: var(--page-color);
+	}
+}
