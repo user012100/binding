@@ -402,6 +402,7 @@ main {
 	article p, li {
 		line-height: 1.074lh;
 		padding-block-end: 1.5rem;
+		padding-inline-end: 1rem;
 	}
 
 	/* link styles */
